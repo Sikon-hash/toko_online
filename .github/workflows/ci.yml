@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # upgrade ke v4 untuk menghindari warning Node.js 20
 
       - name: Setup PHP Environment
         uses: shivammathur/setup-php@v2
@@ -18,11 +18,14 @@ jobs:
       - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-progress
 
+      - name: Fix permissions for vendor/bin
+        run: chmod +x vendor/bin/phpunit
+
       - name: Run PHPUnit & Quality Metrics
         run: vendor/bin/phpunit tests/ --coverage-text --coverage-filter src/
 
       - name: Setup Node.js for Cypress
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4   # upgrade ke v4
         with:
           node-version: 18
 
@@ -33,7 +36,7 @@ jobs:
         run: php -S localhost:8000 &
 
       - name: Run Cypress E2E Tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6   # upgrade ke v6
         with:
           wait-on: 'http://localhost:8000'
           wait-on-timeout: 120
