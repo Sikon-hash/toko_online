@@ -1,0 +1,21 @@
+[
+    {
+        "nama": "test",
+        "email": "test@mail.com",
+        "password": "$2y$12$TVNtOBx8xd26kdG\/8soZYOn6osE0hYChf8zFpu4TIztmFYnTZXck6",
+        "role": "admin"
+    },
+
+    {
+        "nama": "Adeline",
+        "email": "Adeline@mail.com",
+        "password": "$2y$10$I5dVp1yw9eLgIvs5rm2NJuTsPklN6937Mi6tuEHXKQGmuaykl.WN6",
+        "role": "pelanggan"
+    },
+    {
+        "nama": "Icon Priagamis",
+        "email": "icon@mail.com",
+        "password": "$2y$10$tX81n4uzX8lTZCttq.4oQ..ZWb2UdOumeKyahHgo6gLTWoIa5p0Bq",
+        "role": "pelanggan"
+    }
+]
